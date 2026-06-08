@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말랑말랑 수학 탱탱볼 타임어택!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game" id="gameCabinet">
+
+  <div class="start-screen" id="startScreen">
+    <h1>💛 수학 탱탱볼 타임어택!</h1>
+    <p>60초 동안 수학 문제를 풀고 정답 구멍에 공을 골인시키세요!</p>
+    <div class="difficulty-box">
+      <button class="big-btn btn-easy" onclick="startGame('easy')">⭐ 쉬움 (더하기 연산)</button>
+      <button class="big-btn btn-normal" onclick="startGame('normal')">⭐⭐ 보통 (더하기/빼기 연산)</button>
+      <button class="big-btn btn-hard" onclick="startGame('hard')">⭐⭐⭐ 어려움 (구구단 곱셈 연산)</button>
+    </div>
+  </div>
+
+  <div class="play-screen hidden" id="playScreen">
+    <div class="top">
+      <div class="timer">⏱️ <span id="time">60</span>초</div>
+      <div class="score">🏆 <span id="score">0</span>점</div>
+    </div>
+    
+    <div class="time-bar-container">
+      <div class="time-bar" id="timeBar"></div>
+    </div>
+
+    <div class="question-box" id="questionBox">문제 생성 중...</div>
+
+    <div class="game-area">
+      <canvas id="gameCanvas" width="340" height="420"></canvas>
+    </div>
+
+    <div class="bottom-info">
+      <span style="color:#ffffff;"><span id="feedback">스틱을 당겨 정답 구멍으로 쏘세요!</span></span>
+      <span style="color:#ffee55;">🍭 퀴즈 게임</span>
+    </div>
+  </div>
+
+  <div class="end-screen hidden" id="endScreen">
+    <h2>🎉 최종 연산 결과!</h2>
+    <div class="stats">
+      <p class="final-score-container">획득 점수: <span id="finalScore">0</span>점</p>
+      <p>도전 난이도: <span id="finalDifficulty">-</span></p>
+      <p>정답 맞춘 횟수: <span id="totalCount">0</span>번</p>
+      <p>정답률 정확도: <span id="accuracy" class="accuracy">0%</span></p>
+    </div>
+    <button class="big-btn btn-restart" onclick="location.reload()">다시 도전하기!</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
