@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+  background: radial-gradient(circle at center, #fffdeb 0%, #fff3b3 50%, #ffdf43 100%);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game {
+  width: 380px;
+  padding: 25px;
+  border-radius: 30px;
+  background: #ffdb4d; 
+  box-shadow: 
+    0 15px 0 #e6b800, 
+    0 25px 30px rgba(230, 184, 0, 0.4),
+    0 0 15px rgba(255, 255, 255, 0.8) inset;
+  border: 6px solid #fff;
+  position: relative;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.flash-correct { background: #68ffb9 !important; transform: scale(1.02); }
+.flash-wrong { background: #ff6b81 !important; transform: scale(0.98); }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.1);
+  color: #4a3b32;
+}
+
+.time-bar-container {
+  width: 100%;
+  height: 12px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.time-bar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff4757, #ffa502, #ffff00);
+  transition: width 1s linear;
+}
+
+/* 수학 문제 보드 디자인 */
+.question-box {
+  background: #4a3b32;
+  color: #fffb00;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 900;
+  padding: 12px;
+  border-radius: 18px;
+  margin-bottom: 12px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.timer { color: #ff4757; }
+.score { color: #ff9f43; }
+
+.game-area {
+  position: relative;
+  background: radial-gradient(circle at center, #ffffff 0%, #e6f7ff 60%, #b3e6ff 100%);
+  border-radius: 25px;
+  border: 4px solid #fff;
+  box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  display: block;
+  background: transparent;
+}
+
+.bottom-info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  background: rgba(74, 59, 50, 0.6);
+  padding: 10px 15px;
+  border-radius: 18px;
+  color: #ffffff;
+}
+
+.start-screen, .end-screen { 
+  text-align: center; 
+  padding: 10px 0;
+  color: #4a3b32; 
+}
+.start-screen h1, .end-screen h2 { color: #ffffff; }
+.hidden { display: none; }
+
+.difficulty-box {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.big-btn {
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  transition: all 0.1s;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+}
+
+.big-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.2) !important;
+}
+
+.btn-easy { background: #2ed573; box-shadow: 0 6px 0 #26af5f; }
+.btn-normal { background: #ffa502; box-shadow: 0 6px 0 #e69500; }
+.btn-hard { background: #ff4757; box-shadow: 0 6px 0 #d93d4a; }
+.btn-restart { background: #1e90ff; box-shadow: 0 6px 0 #1a7bd9; margin-top: 25px; }
+
+.stats {
+  margin: 25px 0;
+  font-size: 19px;
+  line-height: 2;
+  background: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 20px;
+  color: #4a3b32;
+}
+
+.final-score-container {
+  font-size: 28px !important;
+  color: #ff4757;
+  font-weight: 900;
+  border-bottom: 2px dashed #ffdb4d;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+#finalScore {
+  font-size: 36px;
+  color: #ffa502;
+  text-shadow: 1px 1px 0 #ffdb4d;
+}
+
+.accuracy { color: #10ac84; font-weight: bold; font-size: 26px; }
+h1 { font-size: 36px; margin: 10px 0; color: #fff; text-shadow: 4px 4px 0 #e6b800; }
+h2 { font-size: 28px; color: #fff; text-shadow: 2px 2px 0 #e6b800; }
+p { font-size: 16px; margin: 5px 0; font-weight: bold; }
